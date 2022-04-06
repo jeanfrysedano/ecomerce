@@ -1,0 +1,32 @@
+.NavBar {
+    background-color: rgb(49, 49, 42);
+    display:flex;
+}
+
+.Botones li {
+    display:inline-block;
+    padding: 15px;
+    background-color:rgb(80, 75, 80);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.Botones li a{
+    color: white;
+    text-decoration:none;
+}
+
+.logoo{
+    width:60px;
+    height:80px;
+    margin-right: 600px;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+
+.cart{
+    width:60px;
+    padding-top: 20px;
+    padding-left: 90px;
+}
