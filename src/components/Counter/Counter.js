@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const Counter = ({ onAdd}) => {
+const Counter = ({initial, stock, onAdd}) => {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
@@ -9,7 +9,7 @@ const Counter = ({ onAdd}) => {
 
         setTimeout(() => {
             if(isActive) {
-                setCount(10)       
+                setCount(stock)       
             }
         }, 3000)
 
@@ -24,23 +24,19 @@ const Counter = ({ onAdd}) => {
     }, [count])
 
 
-    const decrement = () => {
-        setCount(count - 1)
-    }
+    const decrement = () => {if (count>initial){setCount(count - 1)}}
 
-    const increment = () => {
-        setCount(count + 1)
-    }
+    const increment = () => {if (count<stock){setCount(count + 1)}}
 
     console.log('Esto esta en el cuerpo del componente')
     return(
         <div className='botones'>
             <div className='botonCount'>
-            <a href='#'  onClick={decrement}>-</a> 
+            <button  onClick={decrement}>-</button> 
             <p >{count}</p>
-            <a href='#' onClick={increment}>+</a>
+            <button onClick={increment}>+</button>
             </div>
-            <a className='carrito' href='#' onClick={() => onAdd(count)}>Agregar al carrito</a>
+            <button className='carrito' onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 } 
