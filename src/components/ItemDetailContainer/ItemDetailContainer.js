@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { getProducts } from '../../asyncmock'
-import ItemList from '../ItemList/ItemList'
+import { getProductsById } from '../../asyncmock'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
-const ItemListContainer = (props) => {
+const ItemDetailContainer = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        getProducts().then(prods => {
+        getProductsById().then(prods => {
             setProducts(prods)
         }).catch(error => {
             console.log(error)
@@ -19,9 +19,9 @@ const ItemListContainer = (props) => {
     return(
         <div>
             <h1>{props.greeting}</h1>
-            <ItemList products={products}/>
+            <ItemDetail products={products}/>
         </div>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

@@ -3,7 +3,7 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Counter from './components/Counter/Counter';
 import NavBar from './components/NavBar/NavBar';
-
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -20,6 +20,7 @@ const App = () => {
         <ItemListContainer greeting={'Hola'} />
         {/* <button onClick={() => setShow(!show)}>{show ? 'Desmontar contador' : 'Montar contador'}</button> */}
         { show ? <Counter initial={0} stock={10} onAdd={handleOnAdd}/> : null }
+        <ItemDetailContainer></ItemDetailContainer>
       </div>
   );
 }
